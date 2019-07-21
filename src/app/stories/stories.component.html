@@ -1,0 +1,15 @@
+<input class ="search" #box
+      (keyup.enter)="getStoriesSearch(box.value)"
+      (blur)="getStoriesSearch(box.value)">
+<button (click)="getStoriesSearch(box.value)">Search</button>
+
+<ul>
+  <li *ngFor="let story of stories" >
+    <a href={{story.url}}>
+      <p>
+      <span id ="author">{{story.title}}: </span>
+      <span id ="specialcolor">{{story.by}}</span>
+      </p>
+    </a>
+  </li>
+</ul>
