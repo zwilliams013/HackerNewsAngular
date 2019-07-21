@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { StoriesService } from '../stories.service';
+import { IStory } from '../story'
 
 @Component({
   selector: 'app-stories',
@@ -7,22 +8,27 @@ import { StoriesService } from '../stories.service';
   styleUrls: ['./stories.component.css']
 })
 export class StoriesComponent implements OnInit {
-  stories: any[];
-
+  stories: IStory[];
+ 
   constructor(private storiesService: StoriesService) { }
 
-  getStoriesSearch(searchVal: string) {
+  getStoriesSearch (searchVal: string) {
     if (searchVal.length == 0) {
-      this.storiesService.getBestStories().subscribe((stories) => {
-        this.stories = stories
+      this.storiesService.getBestStories()
+      .subscribe
+      (
+        data => {
+        this.stories = data;
       });
     }
     else {
-      this.storiesService.getBestStories().subscribe((stories) => {
-        this.stories = stories
+      this.storiesService.getBestStories()
+      .subscribe(
+        data => {
+        this.stories = data
           .filter(stories =>
-            stories.title.toString().toLowerCase() == searchVal.toLowerCase() ||
-            stories.by.toString().toLowerCase() == searchVal.toLowerCase()
+            stories.title == searchVal.toLowerCase() ||
+            stories.by == searchVal.toLowerCase()
           );
       });
     }
