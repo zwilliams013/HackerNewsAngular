@@ -1,3 +1,9 @@
+Hosted on https://hackernews-angular.azurewebsites.net/
+
+This is a small Angular app using the https://github.com/HackerNews/API api and displays the best stories grabbed from the api.
+The search function requires the exact author.
+Clear button clears the search and returns the best stories.
+
 # Hackernewsapi
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.1.1.
