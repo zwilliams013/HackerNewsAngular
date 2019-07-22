@@ -27,7 +27,6 @@ export class StoriesComponent implements OnInit {
         data => {
         this.stories = data
           .filter(stories =>
-            stories.title == searchVal.toLowerCase() ||
             stories.by == searchVal.toLowerCase()
           );
       });

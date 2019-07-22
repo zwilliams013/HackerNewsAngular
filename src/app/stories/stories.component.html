@@ -1,7 +1,8 @@
 <input class ="search" #box
       (keyup.enter)="getStoriesSearch(box.value)"
       (blur)="getStoriesSearch(box.value)">
-<button (click)="getStoriesSearch(box.value)">Search by exact author/title</button>
+<button (click)="getStoriesSearch(box.value)">Search by exact author</button>
+<button (click)="getStoriesSearch('')">Clear</button>
 
 <ul>
   <li *ngFor="let story of stories" >

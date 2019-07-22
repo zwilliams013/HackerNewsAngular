@@ -18,10 +18,15 @@ li {
   width: 95%;
 }
 
-#author{
+#author {
   font-weight: bold;
 }
 
-#specialcolor{
+#specialcolor { 
   font-style: italic;
+}
+
+input {
+  width: 50%;
+  align-self: center;
 }
