@@ -10,7 +10,6 @@ import {IStory} from './story';
 export class StoriesService {
 
   baseURL: string;
-  stories: Observable<IStory>;
 
   constructor(private http: HttpClient) {
     this.baseURL = 'https://hacker-news.firebaseio.com/v0';

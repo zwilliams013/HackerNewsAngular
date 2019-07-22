@@ -9,7 +9,7 @@ import { IStory } from '../story'
 })
 export class StoriesComponent implements OnInit {
   stories: IStory[];
- 
+  
   constructor(private storiesService: StoriesService) { }
 
   getStoriesSearch (searchVal: string) {
@@ -27,7 +27,7 @@ export class StoriesComponent implements OnInit {
         data => {
         this.stories = data
           .filter(stories =>
-            stories.by == searchVal.toLowerCase()
+            stories.by.toLowerCase() == searchVal.toLowerCase()
           );
       });
     }
